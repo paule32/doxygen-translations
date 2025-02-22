@@ -13,10 +13,10 @@ name: Build Locales for Doxygen
 on:
   push:
     branches:
-      - private
+      - main
   pull_request:
     branches:
-      - private
+      - main
 
 jobs:
   build:

@@ -31,17 +31,17 @@ jobs:
 
     - name: Compile Translations (English)
       run: |
+        mkdir  -p src/en/LC_MESSAGES
+        msgfmt -o src/en/LC_MESSAGES/messages.mo src/en.po
         mkdir -p locale/en/LC_MESSAGES
-        msgfmt -o locale/en/LC_MESSAGES/messages.mo locale/en.po
-        mkdir -p bin/locale/en/LC_MESSAGES
-        cp locale/en/LC_MESSAGES/messages.mo bin/locale/en/LC_MESSAGES/messages.mo
+        cp src/en/LC_MESSAGES/messages.mo locale/en/LC_MESSAGES/messages.mo
     
     - name: Compile Translations (German)
       run: |
+        mkdir  -p src/de/LC_MESSAGES
+        msgfmt -o src/de/LC_MESSAGES/messages.mo locale/de.po
         mkdir -p locale/de/LC_MESSAGES
-        msgfmt -o locale/de/LC_MESSAGES/messages.mo locale/de.po
-        mkdir -p bin/locale/de/LC_MESSAGES
-        cp locale/de/LC_MESSAGES/messages.mo bin/locale/de/LC_MESSAGES/messages.mo
+        cp src/de/LC_MESSAGES/messages.mo locale/de/LC_MESSAGES/messages.mo
         
     - name: Create Archive
       run: |

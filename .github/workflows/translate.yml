@@ -29,6 +29,11 @@ jobs:
     - name: Install gettext
       run: sudo apt-get install -y gettext
 
+    - name: Compile Translations (Dutch)
+      run: |
+        mkdir  -p locale/nl/LC_MESSAGES
+        msgfmt -o locale/nl/LC_MESSAGES/doxygen.mo src/pot/nl.po
+
     - name: Compile Translations (English)
       run: |
         mkdir  -p locale/en/LC_MESSAGES

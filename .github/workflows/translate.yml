@@ -32,12 +32,12 @@ jobs:
     - name: Compile Translations (English)
       run: |
         mkdir  -p locale/en/LC_MESSAGES
-        msgfmt -o locale/en/LC_MESSAGES/messages.mo locale/src/en.po
+        msgfmt -o locale/en/LC_MESSAGES/doxygen.mo src/pot/en.po
     
     - name: Compile Translations (German)
       run: |
         mkdir  -p locale/de/LC_MESSAGES
-        msgfmt -o locale/de/LC_MESSAGES/messages.mo locale/src/de.po
+        msgfmt -o locale/de/LC_MESSAGES/doxygen.mo src/pot/de.po
         
     - name: Create Archive
       run: |
